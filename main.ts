@@ -6,7 +6,8 @@ const genAI = new GoogleGenerativeAI(process.env.API_KEY);
 
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
-const prompt = "Write a story about an AI and magic";
+const prompt = `prompt: "Write a short, fun and humorous story in Vietnamese. Provide context by 'Tí Quậy', the most popular short and fun story in Vietnam"
+temperature: 1.5`;
 
 async function run() {
   const result = await model.generateContent(prompt);
